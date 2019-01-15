@@ -79,11 +79,16 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell : CarBrandCell = tableView.dequeueReusableCell(withIdentifier: "CarBrandCell", for: indexPath) as! CarBrandCell
 
         let object = objects[indexPath.row] as! String
-        cell.textLabel!.text = object
+        cell.carBrandCellOutlet.text = object
+        cell.carBrandLogoImage.image = UIImage(imageLiteralResourceName: "BMWLogo")
+        //textLabel!.text = object
         return cell
+        
+        // this needs to bechecked:
+        // https://stackoverflow.com/questions/15499376/uiimageview-aspect-fit-and-center
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

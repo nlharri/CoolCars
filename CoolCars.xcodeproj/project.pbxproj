@@ -15,6 +15,7 @@
 		4B08F16D21EB178500FEE34F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B08F16B21EB178500FEE34F /* LaunchScreen.storyboard */; };
 		4B08F17621EB1BB400FEE34F /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B08F17521EB1BB300FEE34F /* Nunito-SemiBold.ttf */; };
 		4B08F17821EB1BC900FEE34F /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B08F17721EB1BC900FEE34F /* OpenSans-Light.ttf */; };
+		4B49357221EDC5B50076FA6C /* CarBrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B49357121EDC5B50076FA6C /* CarBrandCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4B08F16E21EB178500FEE34F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B08F17521EB1BB300FEE34F /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		4B08F17721EB1BC900FEE34F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		4B49357121EDC5B50076FA6C /* CarBrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				4B08F16921EB178500FEE34F /* Assets.xcassets */,
 				4B08F16B21EB178500FEE34F /* LaunchScreen.storyboard */,
 				4B08F16E21EB178500FEE34F /* Info.plist */,
+				4B49357121EDC5B50076FA6C /* CarBrandCell.swift */,
 			);
 			path = CoolCars;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				4B08F16521EB178200FEE34F /* DetailViewController.swift in Sources */,
 				4B08F16321EB178200FEE34F /* MasterViewController.swift in Sources */,
+				4B49357221EDC5B50076FA6C /* CarBrandCell.swift in Sources */,
 				4B08F16121EB178200FEE34F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

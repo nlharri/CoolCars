@@ -83,28 +83,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" rowHeight="213" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
-                                <rect key="frame" x="0.0" y="28" width="375" height="213"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarBrandCell" rowHeight="200" id="WCw-Qf-5nD" customClass="CarBrandCell" customModule="CoolCars" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="212.5"/>
+                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xB-yt-zNQ" userLabel="BrandImage">
-                                            <rect key="frame" x="132" y="11" width="184" height="133"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nck-4T-aAH" userLabel="CarBrandLogoImage">
+                                            <rect key="frame" x="16" y="11" width="343" height="149.5"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" id="Arm-wq-HPj">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="212.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CarBrandName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ML-aN-7u1">
+                                            <rect key="frame" x="16" y="168" width="343" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.21960784489999999" green="0.082352943720000002" blue="0.24313725529999999" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Nck-4T-aAH" secondAttribute="trailing" constant="16" id="74O-am-aJC"/>
+                                        <constraint firstItem="4ML-aN-7u1" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" constant="16" id="A0O-Q9-Dpg"/>
+                                        <constraint firstItem="4ML-aN-7u1" firstAttribute="top" secondItem="Nck-4T-aAH" secondAttribute="bottom" constant="7.5" id="RaS-x9-4mn"/>
+                                        <constraint firstItem="Nck-4T-aAH" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leading" constant="16" id="erN-Nb-EiE"/>
+                                        <constraint firstAttribute="trailing" secondItem="4ML-aN-7u1" secondAttribute="trailing" constant="16" id="f6v-cT-wsC"/>
+                                        <constraint firstItem="Nck-4T-aAH" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" constant="11" id="fti-L1-IzR"/>
+                                        <constraint firstAttribute="bottom" secondItem="4ML-aN-7u1" secondAttribute="bottom" constant="10.5" id="l0k-ag-gqL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="CarBrandLogoImage" destination="Nck-4T-aAH" id="W0c-Vo-70b"/>
+                                    <outlet property="carBrandCellOutlet" destination="4ML-aN-7u1" id="eCJ-fd-TKf"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
