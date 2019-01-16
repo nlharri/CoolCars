@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [Any]()
+    var carBrands = [CarBrand]()
 
 
     override func viewDidLoad() {
@@ -26,10 +26,8 @@ class MasterViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
-        addCarBrand(brandName: "BMW")
-        addCarBrand(brandName: "Audi")
-        addCarBrand(brandName: "Mercedes")
-        addCarBrand(brandName: "Lexus")
+        addCarBrand(brandName: "BMW", brandImageName: "BMWLogo")
+        addCarBrand(brandName: "Audi", brandImageName: "AudiLogo")
 }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,13 +40,13 @@ class MasterViewController: UITableViewController {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let now = df.string(from: Date())
-        objects.insert(now, at: 0)
+        carBrands.insert(CarBrand.init(carBrandName: now, carBrandImageName: ""), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
     
-    func addCarBrand(brandName: String) {
-        objects.insert(brandName, at: 0)
+    func addCarBrand(brandName: String, brandImageName : String) {
+        carBrands.insert(CarBrand.init(carBrandName: brandName, carBrandImageName: brandImageName), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
@@ -58,10 +56,9 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                //let object = objects[indexPath.row] as! NSDate
-                let object = objects[indexPath.row] as! String
+                let carBrand = carBrands[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+                controller.detailItem = carBrand.carBrandName
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -75,16 +72,15 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return carBrands.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CarBrandCell = tableView.dequeueReusableCell(withIdentifier: "CarBrandCell", for: indexPath) as! CarBrandCell
 
-        let object = objects[indexPath.row] as! String
-        cell.carBrandCellOutlet.text = object
-        cell.carBrandLogoImage.image = UIImage(imageLiteralResourceName: "BMWLogo")
-        //textLabel!.text = object
+        let carBrand = carBrands[indexPath.row]
+        cell.carBrandCellOutlet.text = carBrand.carBrandName
+        cell.carBrandLogoImage.image = carBrand.carBrandImage
         return cell
         
         // this needs to bechecked:
@@ -98,7 +94,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            objects.remove(at: indexPath.row)
+            carBrands.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
