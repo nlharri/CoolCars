@@ -28,6 +28,8 @@ class MasterViewController: UITableViewController {
         
         addCarBrand(brandName: "BMW", brandImageName: "BMWLogo")
         addCarBrand(brandName: "Audi", brandImageName: "AudiLogo")
+        addCarBrand(brandName: "Mercedes", brandImageName: "MercedesLogo")
+        addCarBrand(brandName: "Lexus", brandImageName: "LexusLogo")
 }
 
     override func viewWillAppear(_ animated: Bool) {
